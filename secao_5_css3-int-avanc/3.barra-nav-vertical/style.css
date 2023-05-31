@@ -17,7 +17,6 @@ ul {
 
 
 ul a {
-    border: 1px solid red;
     width: 200px;
     height: 40px;
     display: block;
@@ -25,10 +24,22 @@ ul a {
     text-decoration: none;
     text-indent: 40px;
     line-height: 40px;
-    background: url(imagens/menu.png) no-repeat left center;
+    background: #f7b600 url(imagens/menu.png) no-repeat left center;
 }
 a:hover {
     background-position: right bottom;
+    background-color: #f99200;
+    color: white;
+}
+
+#home #navegacao-lateral .home a,
+#sobre #navegacao-lateral .sobre a, 
+#servicos #navegacao-lateral .servicos a, 
+#noticias #navegacao-lateral .noticias a, 
+#contato #navegacao-lateral .contato a {
+    background-position: right bottom;
+    background-color: #f99200;
+    color: white;
 }
 
 
