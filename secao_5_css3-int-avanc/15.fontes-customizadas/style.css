@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Road Rage";
+    src: url(fonts/RoadRage.woff);
+}
+@font-face {
+    font-family: "Super Mario";
+    src: url(fonts/SuperMario85.woff);
+}
+
+h1 {
+    font-size: 6em;
+    font-family: "Road Rage";
+}
+
+p {
+    font-size: 6em;
+    font-family: "Super Mario";
+}
