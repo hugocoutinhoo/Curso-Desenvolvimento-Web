@@ -17,3 +17,27 @@ if (media >= 7) {
 
 // ------------ Praticando com operadores lógicos
 
+// ----- && (e)
+if (2 == 2 && 3 >= 10) {
+    console.log('Verdadeiro')
+} else {
+    console.log('Falso')
+}
+
+// ----- || (ou)
+if (2 == 2 || 3 >= 1) {
+    console.log('Verdadeiro')
+} else {
+    console.log('Falso')
+}
+
+// ----- ! (negação)
+if (!(6 >= 2)) {
+    console.log('Verdadeiro')
+} else {
+    console.log('Falso')
+}
+
+
+
+
