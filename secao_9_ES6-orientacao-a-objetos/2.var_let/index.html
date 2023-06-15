@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var e let</title>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+
+        /* EXEMPLOS DE ESCOPOS:
+
+        var serie = 'Friends' //escopo global é um objeto window
+
+        function x() {
+            var serie = 'GOT' // escopo de função
+            console.log(`função: ${serie}`)
+
+            if (true) {
+                console.log(`Bloco dentro da função: ${serie}`)
+            }
+        }
+
+        x()
+
+        if (true) {
+            console.log(`global: ${serie}`)    
+            }
+        */
+            //=----------------------------------------
+        
+        function x() {
+
+            console.log(`Dentro da função: ${serie}`)
+
+            if(true) {
+
+            }
+        }
+
+        //x() => undefined
+
+        if(true) {
+           var serie = 'TWD' // escopo de bloco
+           x()
+           console.log(serie)
+        }
+
+        console.log(serie)
+    
+        //-----------------------------
+
+        if (true) {
+            let serie = 'Friends'
+            console.log(serie)    
+        }
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
