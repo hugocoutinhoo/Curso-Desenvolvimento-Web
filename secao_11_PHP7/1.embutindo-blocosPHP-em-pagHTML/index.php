@@ -11,5 +11,7 @@
     ?>
     <br>
     <?= 'Utilizando a tag padrão' ?>
+    <br>
+    <? echo 'Utlizando a tag curta' ?>
 </body>
 </html>
