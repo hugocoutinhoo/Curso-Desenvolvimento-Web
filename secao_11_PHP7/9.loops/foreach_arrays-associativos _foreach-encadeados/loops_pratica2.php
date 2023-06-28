@@ -10,14 +10,22 @@
 
     <?php
 
-    $funcionarios = array('João', 'Maria', 'Júlia');
+    $funcionarios = array(
+        array('nome' => 'João', 'salario' => 2500, 'data_nascimento' => '06/04/1980'), 
+        array('nome' => 'Maria', 'salario' => 3000), 
+        array('nome' => 'Júlia', 'salario' => 2200)  
+        );
 
     echo '<pre>';
     print_r($funcionarios);
     echo '<pre>';
 
-    foreach($funcionarios as $idx $nome_funcionario) {
-        echo $nome_funcionario . '<br>';
+    foreach($funcionarios as $idx => $funcionario) {
+        
+        foreach($funcionario as $idx2 => $valor) {
+            echo "$idx2 - $valor <br>";
+        }
+        echo '<hr>';
     }
 
     ?>
