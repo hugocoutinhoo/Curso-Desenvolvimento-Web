@@ -11,12 +11,49 @@
         <script>
 
             function requisitarPagina(url) {
+
+                document.getElementById('conteudo').innerHTML = ''
+
+                //incluir o gif de loading na página
+                if(!document.getElementById('loading')) {
+                let imgLoading = document.createElement('img')
+                imgLoading.id = 'loading'
+                imgLoading.src = 'loading.gif'
+                imgLoading.className = 'rounded mx-auto d-block'
+
+                document.getElementById('conteudo').appendChild(imgLoading)
+            }
+
                 let ajax = new XMLHttpRequest();
 
+                
+
+                //requisição não iniciada, state = 0
+                //console.log(ajax.readyState)
+
                 ajax.open('GET', url)
+
+                //estabelecer uma conexão com o servidor, state = 1
+                //console.log(ajax.readyState)
+
+                //de alguma lógica que fique olhando para o progresso da requisição
+                ajax.onreadystatechange = () => {
+                    if(ajax.readyState == 4 && ajax.status == 200) {
+
+                        document.getElementById('conteudo').innerHTML = ajax.responseText
+                        //document.getElementById('loading').remove()
+                    }
+
+                    if(ajax.readyState == 4 && ajax.status == 404) {
+
+                        document.getElementById('conteudo').innerHTML = 'Tente novamente mais tarde.'
+                        //document.getElementById('loading').remove()
+                    }
+                }
+
                 ajax.send()
 
-                console.log(ajax)
+                //console.log(ajax)
             }
             
 
@@ -40,7 +77,7 @@
 	    	<div class="row mb-2">
 	    		<div class="col-md-4 center"></div>
 	    		<div class="col-md-4 center">
-	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_1_conteudo.html')">Página 1</a>
+	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_1_conteudo.php')">Página 1</a>
 	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_2_conteudo.html')">Página 2</a>
 	    			<a href="#" class="btn btn-primary" onclick="requisitarPagina('pagina_3_conteudo.html')">Página 3</a>
 	    		</div>
@@ -50,7 +87,7 @@
 	    	<div class="row">
 		    	<div class="col-md-1"></div>
 
-		    	<div class="col-md-10">
+		    	<div class="col-md-10" id="conteudo">
 		    		
 		    	</div>
 		    		
